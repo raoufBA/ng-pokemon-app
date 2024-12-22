@@ -7,7 +7,7 @@ export class BorderCardDirective {
 
   private initialColor: string = '#f5f5f5';
   private defaultColor: string = '#009688';
-  private defaultHeight: number = 520;
+  private defaultHeight: number = 530;
 
   constructor(private el: ElementRef) {
     this.setHeight(this.defaultHeight);
@@ -19,7 +19,7 @@ export class BorderCardDirective {
 
   @HostListener('mouseenter') onMouseEnter() {
     this.setBorder(this.borderColor || this.defaultColor);
-    this.setHeight(520);
+    this.setHeight(530);
   }
 
   @HostListener('mouseleave') onMouseLeave() {
