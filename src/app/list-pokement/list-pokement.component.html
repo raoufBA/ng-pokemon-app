@@ -1,0 +1,26 @@
+<h1 class="center">Liste de Pokémons!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m4 l3" *ngFor="let pokemon of pokemons">
+            <div class="card" pkmBorderCard>
+                <div class="card-image">
+                    <img [src]="pokemon.picture" alt="{{pokemon.name}}">               
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title"><strong> {{pokemon.name}}</strong></h3>
+                    <p><strong>Height</strong>: {{pokemon.cp}}</p>
+                    <p><strong>Weight</strong>: {{pokemon.hp}}</p>
+                    <p><strong>Types</strong>: 
+                        <span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColor}}">
+                            {{type}}
+                        </span>
+                    </p>    
+                        <p><strong>Created</strong>: {{pokemon.created | date:'medium'}}</p>
+                </div>
+                <div class="card-action">
+                    <a routerLink="/pokement/{{pokemon.id}}">Open</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
